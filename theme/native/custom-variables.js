@@ -311,10 +311,10 @@ export const container = {
 export const badge = {
     fontWeight: font.weightNormal,
     borderRadius: border.radiusLarge,
-    paddingVertical: spacing.small,
+    paddingVertical: spacing.smaller,
     paddingHorizontal: spacing.small,
     default: {
-        color: contrast.high,
+        color: contrast.higher,
         backgroundColor: contrast.lowest
     },
     primary: {

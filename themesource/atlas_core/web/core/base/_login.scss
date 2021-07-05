@@ -34,6 +34,24 @@ body {
     width: 400px;
     margin: 0 auto;
 }
+
+.loginpage-fullscreenDiv {
+    background-color: #e8e8e8;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.loginpage-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 // Form
 .loginpage-form {
     .alert {
@@ -41,25 +59,35 @@ body {
     }
 
     .btn {
-        border-radius: 40px;
+        border-radius: $border-radius-default;
     }
 
     // Form label + input
     .form-group {
         width: 100%;
         align-items: center;
+        @media only screen and (max-width: $screen-sm-max) {
+            align-items: flex-start;
+        }
 
         .control-label {
             flex: 4;
             margin-bottom: 0;
             font-size: $font-size-default;
             font-weight: 500;
+            @media only screen and (max-width: $screen-sm-max) {
+                flex: 1;
+                margin-bottom: $spacing-small;
+            }
         }
 
         .inputwrapper {
             flex: 8;
             position: relative;
             width: 100%;
+            @media only screen and (max-width: $screen-sm-max) {
+                flex: 1;
+            }
 
             .glyphicon {
                 &:before {
@@ -80,6 +108,7 @@ body {
 
             .form-control {
                 padding: $form-input-padding-y $form-input-padding-x $form-input-padding-y 45px;
+                width: 100%;
             }
 
             .form-control:focus ~ .glyphicon:before {
@@ -88,7 +117,8 @@ body {
         }
     }
 }
-// Divider - only on login-with-sso.html
+
+// Divider - only on login-with-mendixsso-button.html
 .loginpage-alternativelabel {
     display: flex;
     align-items: center;
@@ -108,6 +138,14 @@ body {
 
 .loginpage-signin {
     color: #555555;
+}
+
+.loginpage-form .btn {
+    img {
+        vertical-align: middle;
+        top: -1px;
+        position: relative;
+    }
 }
 
 // Show only on wide screens
